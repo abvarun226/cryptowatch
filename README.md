@@ -31,6 +31,6 @@ And then start the cryptowatch container. Use the appropriate postgres DB passwo
 sudo docker run --link crypto_postgres:postgres --restart=always -p 80:80 -e REFRESH_INTERVAL=30 -e DATABASE_URI='postgres://crypto:<PASSWORD>@postgres:5432/cryptowatch' -e CRYPTO_API_KEY='<ALPHAVANTAGE_API_KEY>' -d --name cryptowatch cryptowatch:testing
 ```
 
-Make sure that no other process is using port 80.
+Make sure that no other process is using port 80 on your host.
 
 Website will be available on this address, http://localhost
