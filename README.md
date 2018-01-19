@@ -19,7 +19,7 @@ sudo docker build -t cryptowatch:testing .
 
 How to setup
 ============
-During the initial setup, run `./inf/setup_password.sh.example` script (Replace *<PASSWORD>* and *<ALPHAVANTAGE_API_KEY>* with actually passwords).
+During the initial setup, run `./inf/setup_password.sh.example` script (Replace `<PASSWORD>` and `<ALPHAVANTAGE_API_KEY>` with actually passwords).
 
 This will setup postgres database along with initial seed data.
 ```
