@@ -1,9 +1,14 @@
 # Crypto Watch
 
+A dashboard for cryptocurrency rates
+
+
 Crypto Data API
 ===============
-https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_INTRADAY&symbol=BTC&market=USD&apikey=DEMO
+API : https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_INTRADAY&symbol=BTC&market=USD&apikey=DEMO
+
 Get the API key from this site, https://www.alphavantage.co
+
 
 How to build
 ============
@@ -15,6 +20,7 @@ sudo docker build -t cryptowatch:testing .
 How to setup
 ============
 During the initial setup, run `./inf/setup_password.sh.example` script (Replace *<PASSWORD>* and *<ALPHAVANTAGE_API_KEY>* with actually passwords).
+
 This will setup postgres database along with initial seed data.
 ```
 bash ./inf/setup_password.sh
