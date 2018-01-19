@@ -1,0 +1,9 @@
+node_modules
+bower_components
+migrations
+data.tgz
+*.lock
+start_containers.sh
+setup_database.sh
+postgres-data
+postgres_password

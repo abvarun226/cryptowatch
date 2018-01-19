@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -xe
+
+count=$(sudo docker ps | grep crypto_postgres | wc -l)
+if [ "$count" != "0" ];then
+    sudo docker stop crypto_postgres
+    sudo docker rm crypto_postgres
+    sudo docker volume prune
+fi
+rm -rf migrations
+
+sudo docker run -d -p 5432:5432 -e POSTGRES_INITDB_ARGS="--auth-host=trust --auth-local=trust" -e POSTGRES_PASSWORD="<PASSWORD>" -v crypto_pgdata:/var/lib/postgresql/data --restart=always --name crypto_postgres postgres:latest
+
+sleep 30
+
+sudo docker exec -it crypto_postgres psql --username "postgres" -c "CREATE DATABASE cryptowatch;"
+sudo docker exec -it crypto_postgres psql --username "postgres" -c "CREATE USER crypto WITH PASSWORD '<PASSWORD>';"
+sudo docker exec -it crypto_postgres psql --username "postgres" -c "GRANT ALL PRIVILEGES ON DATABASE cryptowatch TO crypto;"
+
+export CRYPTO_API_KEY='<ALPHAVANTAGE_API_KEY>'
+export DATABASE_URI='postgres://crypto:<PASSWORD>@localhost:5432/cryptowatch'
+export FLASK_APP=crypto.py
+flask db init
+flask db migrate -m 'crypto table'
+flask db upgrade
+
+tar -xvzf data.tgz
+python bin/initiate_db_table.py
+rm -rf data

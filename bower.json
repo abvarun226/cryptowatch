@@ -1,0 +1,22 @@
+{
+  "name": "cryptowatch",
+  "description": "Monitor prices of crypto-currencies",
+  "main": "index.js",
+  "authors": [
+    "Bharghava Varun A"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^16.1.0"
+  }
+}

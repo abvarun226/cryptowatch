@@ -1,0 +1,8 @@
+__pycache__
+node_modules
+*.lock
+start_containers.sh
+setup_database.sh
+postgres-data
+postgres_password
+migrations

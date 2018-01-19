@@ -1,0 +1,36 @@
+#root {
+    font-family: "Helvetica Neue";
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.ReactTable .rt-thead {
+    overflow-y: scroll;
+}
+
+.jumbotron {
+    padding: 2rem 2rem;
+}
+
+.head-color {
+    color: red;
+    font-weight: bolder;
+}
+
+.value-color {
+    color: blue;
+}
+
+.btn-info {
+    color: #000;
+    background-color: #e9ecef;
+    border-color: #17a2b8;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.card {
+    background-color: ivory;
+}
